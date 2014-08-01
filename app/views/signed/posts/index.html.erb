@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+<div class="row well">
+	<div class="row well">
+		<%= post.user.email %>
+	</div>
+	<div class="row well">
+		<%= post.context %>
+	</div>
+</div>
+<%end%>
