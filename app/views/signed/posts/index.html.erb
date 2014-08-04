@@ -1,10 +1,25 @@
+<div class="row">
+	<%= form_for @post, url: signed_posts_path do |f| %>
+
+	<%= f.text_area :context %>
+
+	<%= f.submit %>
+	<% end %>
+</div>
+
 <% @posts.each do |post| %>
-<div class="row well">
-	<div class="row well">
-		<%= post.user.email %>
+<div class="well">
+	<div class="pull-right" >
+		<%= post.created_at %>
 	</div>
-	<div class="row well">
+	<div class="row">
+		
+		
+		<%= post.user.email %>:
+		
+		
 		<%= post.context %>
+
 	</div>
 </div>
-<%end%>
+<% end %>
