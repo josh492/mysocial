@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'signed/posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -56,5 +56,11 @@ Rails.application.routes.draw do
   #   end
   namespace :signed do
     resources :posts,except:[:show,:new,:edit]
+    resources :users, only: [:update, :index]
+    resources :friends, only: [:index] do
+      collection do
+        get "friend"
+      end
+    end
   end
 end

@@ -1,0 +1,4 @@
+<%= form_for current_user, url: signed_user_path(current_user), method: "PUT" do |f| %>
+  Avatar: <%= f.file_field :avatar %>
+  <%= f.submit "Submit" %>
+<% end %>

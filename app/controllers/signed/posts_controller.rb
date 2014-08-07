@@ -1,6 +1,6 @@
 class Signed::PostsController < Signed::BaseController
 	def index
-		@posts = Post.all.reverse
+		@posts = Post.where(user_id: current_user.all_friends + [current_user.id]).order("updated_at DESC")
 		@post = Post.new
 
 	end
